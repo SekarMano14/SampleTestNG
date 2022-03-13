@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+		<groups>
+
+			<define name="group1">
+				<include name="smoke"></include>
+				<include name="sanity"></include>
+			</define>
+
+			<define name="group2">
+				<include name="regression"></include>
+			</define>
+
+			<define name="group3">
+				<include name="retest"></include>
+			</define>
+
+
+			<run>
+				<include name="group3"></include>
+			</run>
+		</groups>
+
+		<classes>
+			<class name="org.test.groups.A" />
+			<class name="org.test.groups.B" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
